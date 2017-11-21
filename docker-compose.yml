@@ -1,0 +1,14 @@
+jumper:
+  container_name: jumper
+  #image: php:5.6.31-apache
+  build: ./
+  volumes:
+          #- "${APP_HOST_PATH}:/var/www/html"
+    - "./apache-config:/etc/apache2/sites-enabled/"
+    - "./var/www:/var/www"
+      #- "./etc/microvoz:/etc/microvoz"
+  ports:
+      #    - "${APP_HOST_PORT}:80"
+      #- "80:${APP_HOST_PORT}"
+          - "80:80"
+
